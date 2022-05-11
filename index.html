@@ -49,10 +49,12 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button type="button" class="button">Заказать услугу</button>
+          <button data-modal-open type="button" class="button">Заказать услугу</button>
         </div>
-        <div class="backdrop">
-          <div class="modal"></div>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <img data-modal-close class="icon-close" src="./images/close.svg" alt="закрыть">
+          </div>
         </div>
   
       </section>
@@ -118,12 +120,21 @@
           <ul class="list">
             <li class="item">
               <img src="./images/box1.jpg" alt="компьютер" width="370" height="294" />
+              <div class="description">
+                <p>Десктопные приложения</p>
+              </div>
             </li>
             <li class="item">
               <img src="./images/box2.jpg" alt="телефон" width="370" height="294" />
+              <div class="description">
+                <p>Мобильные приложения</p>
+              </div>
             </li>
             <li class="item">
               <img src="./images/box3.jpg" alt="планшет" width="370" height="294" />
+              <div class="description">
+                <p>Дизайнерские решения</p>
+              </div>
             </li>
           </ul>
         </div>
