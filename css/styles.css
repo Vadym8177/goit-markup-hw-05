@@ -400,7 +400,8 @@ img {
 
     
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -410,7 +411,7 @@ img {
     background-color: var(--accent-color);
     border-radius: 50%;
     
-      
+
 }
 
 .section-team {
@@ -736,7 +737,6 @@ img {
 }
 
 .portfolio-data {
-    display: block;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -748,8 +748,9 @@ img {
     text-decoration: none;
     cursor: pointer;
     border: 1px solid #EEEEEE;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .section-portfolio .info:nth-last-child(-n + 3) {
@@ -758,17 +759,17 @@ img {
 
 .section-portfolio .list {
     padding: 20px 24px;
+
 }
 
 .section-portfolio .title,
-.section-portfolio .text,
-.section-portfolio .photo {
-    display: block;
+.section-portfolio .text {
     margin-bottom: 0;
     margin-top: 0;
 }
 
 .section-portfolio .info {  
+    display: flex;
     margin-bottom: 30px;
     border-bottom: 1px solid #EEEEEE;
     
@@ -778,4 +779,68 @@ img {
     margin-bottom: 4px;
 }
 
+.section-portfolio .thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-portfolio .overlay {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+    
+
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.section-portfolio .slide {
+
+    width: 322px;
+    height: 168px;
+    text-align: left;
+    margin: 0;
+
+
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: var(--secondary-text-color);
+
+    
+}
+.section-portfolio .holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-portfolio .link:hover .holder,
+.section-portfolio .link:focus .holder {
+    opacity: 1;
+}
+
+
+.section-portfolio .link:hover .overlay,
+.section-portfolio .link:focus .overlay {
+   
+    transform: translateY(0);
+}
+
+.section-portfolio .link:hover,
+.section-portfolio .link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
 
